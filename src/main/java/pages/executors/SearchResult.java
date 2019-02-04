@@ -5,11 +5,12 @@ import org.openqa.selenium.support.PageFactory;
 import pages.locators.SearchResultLocators;
 import util.DriverFactory;
 import util.Helpers;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SearchResult extends SearchResultLocators{
+public class SearchResult extends SearchResultLocators {
 
     public SearchResult() {
         PageFactory.initElements(DriverFactory.getDriver(), this);
@@ -31,11 +32,12 @@ public class SearchResult extends SearchResultLocators{
         return itemsList;
     }
 
-    public void openSpecificProductNameFromSearchResult(String selectedItem) {
+    public ProductDetails openSpecificProductNameFromSearchResult(String selectedItem) {
         List<WebElement> result = productNamesOnSearchList
                 .stream()
                 .filter(item -> item.getText().equals(selectedItem))
                 .collect(Collectors.toList());
         Helpers.scrollTo(result.get(0)).click();
+        return new ProductDetails();
     }
 }

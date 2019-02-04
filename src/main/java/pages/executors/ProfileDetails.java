@@ -8,6 +8,7 @@ import util.Helpers;
 
 public class ProfileDetails extends ProfileDetailsLocators{
 
+
     public ProfileDetails() {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }

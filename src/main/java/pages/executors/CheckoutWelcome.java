@@ -23,7 +23,6 @@ public class CheckoutWelcome extends CheckoutWelcomeLocators{
         DriverFactory.wait.until(ExpectedConditions.visibilityOf(loginCheckbox));
         loginCheckbox.click();
         this.password.sendKeys(password);
-        Helpers.waitForElementToBeClickable(continueToCheckoutBtn);
         continueToCheckoutBtn.click();
 
         return new BuySteps();

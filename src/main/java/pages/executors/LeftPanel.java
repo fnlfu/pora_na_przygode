@@ -29,8 +29,9 @@ public class LeftPanel extends LeftPanelLocators{
         return new AccountMenu();
     }
 
-    public void searchItem(String item) {
+    public SearchResult searchItem(String item) {
         searchInput(item).sendKeys(Keys.ENTER);
+        return new SearchResult();
     }
 
     public AccountMenu openAccountMenu() {
@@ -50,6 +51,7 @@ public class LeftPanel extends LeftPanelLocators{
     }
 
     public void logout() {
+        Helpers.waitForElementToBeClickable(accountBtn);
         accountBtn.click();
         Helpers.delay(1);
         logoutBtn.click();

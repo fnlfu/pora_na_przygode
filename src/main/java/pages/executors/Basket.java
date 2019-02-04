@@ -25,9 +25,9 @@ public class Basket extends BasketPageLocators{
         return getProductsInBasket().contains(productName);
     }
 
-    public void checkout() {
-
+    public CheckoutWelcome checkout() {
         checkoutBtn.click();
+        return new CheckoutWelcome();
     }
 
     public void remove(String productName) {

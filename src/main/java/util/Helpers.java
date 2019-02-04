@@ -24,10 +24,10 @@ public class Helpers {
         }
         return true;
     }
-
     public static void waitForElementToBeClickable(WebElement element){
         DriverFactory.wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
 
     public static void delay(int sec){
         try {

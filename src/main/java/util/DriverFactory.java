@@ -55,14 +55,4 @@ public class DriverFactory {
             driver = null;
         }
     }
-
-    @Before
-    public void beforeScenario() {
-        driver = getDriver();
-    }
-
-    @After
-    public void afterScenario() {
-        DriverFactory.closeDriver();
-    }
 }
